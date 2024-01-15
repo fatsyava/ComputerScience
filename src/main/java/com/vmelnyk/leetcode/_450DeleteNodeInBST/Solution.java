@@ -8,7 +8,7 @@ import java.util.Queue;
 
 class Solution {
 
-  /*  public TreeNode deleteNode(TreeNode root, int key) {
+  public TreeNode deleteNode(TreeNode root, int key) {
     if (root == null) {
       return null;
     }
@@ -37,9 +37,9 @@ class Solution {
       node = node.left;
     }
     return node;
-  }*/
+  }
 
-  public TreeNode deleteNode(TreeNode root, int val) {
+  /*public TreeNode deleteNode(TreeNode root, int val) {
     if (root != null) {
       Queue<T> q = new ArrayDeque<>(List.of(new T(null, root)));
 
@@ -72,7 +72,7 @@ class Solution {
       minParent = min;
       min = min.left;
     }
-  }
+  }*/
 }
 
 final class T {
