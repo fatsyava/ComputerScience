@@ -1,4 +1,4 @@
-package com.vmelnyk.geeks4geeks.кemoveKDigits;
+package com.vmelnyk.geeks4geeks.removeKDigits;
 
 import java.util.Stack;
 
