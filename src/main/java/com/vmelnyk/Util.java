@@ -1,6 +1,6 @@
 package com.vmelnyk;
 
-import java.util.Random;
+import java.util.*;
 
 /** Usage: int[] array = {1, 2, 3}; Util.shuffle(array); */
 public class Util {
@@ -34,6 +34,16 @@ public class Util {
     }
   }
 
+  public static <T> void shuffle(List<T> array) {
+    if (random == null) {
+      random = new Random();
+    }
+    int count = array.size();
+    for (int i = count; i > 1; i--) {
+      Collections.swap(array, i - 1, random.nextInt(i));
+    }
+  }
+
   private static <T> void swap(T[] array, int i, int j) {
     T temp = array[i];
     array[i] = array[j];
@@ -56,5 +66,17 @@ public class Util {
       c++;
     }
     return c;
+  }
+
+  public static List<Integer> randomIntList(int len) {
+    if (random == null) {
+      random = new Random();
+    }
+    List<Integer> result = new ArrayList<>();
+    for (int i = 0; i < len; i++) {
+      result.add(i);
+    }
+    shuffle(result);
+    return result;
   }
 }
