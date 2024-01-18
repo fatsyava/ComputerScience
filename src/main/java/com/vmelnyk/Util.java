@@ -79,4 +79,56 @@ public class Util {
     shuffle(result);
     return result;
   }
+
+  public static int[] randomIntArray(int len) {
+    if (random == null) {
+      random = new Random();
+    }
+    int[] result = new int[len];
+    for (int i = 0; i < len; i++) {
+      result[i] = i;
+    }
+    shuffle(result);
+    return result;
+  }
+
+  public static int[] randomIntArray(int len, int initial) {
+    if (random == null) {
+      random = new Random();
+    }
+    int[] result = new int[len];
+    for (int i = 0; i < len; i++) {
+      result[i] = i;
+    }
+    shuffle(result);
+    return result;
+  }
+
+  // Function to find the factorial
+  // of a number
+  public static double fact(int a) {
+    double f = 1.0;
+    // Loop to find the factorial
+    // of the given number
+    for (int i = 2; i <= a; i++) f = f * i;
+    return f;
+  }
+
+  // Function to find the number
+  // of permutations possible
+  // for a given String
+  public static long permute(int n, int r) {
+      return n < r ? 0 : (long)(fact(n) / fact(n - r));
+  }
+
+  // Function to find the total
+  // number of combinations possible
+  public static long findPermutations(int n) {
+    long sum = 0, P;
+    for (int r = 1; r <= n; r++) {
+      P = permute(n, r);
+      sum = sum + P;
+    }
+    return sum;
+  }
 }
